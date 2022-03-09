@@ -59,26 +59,26 @@ public class LanguageAdapter extends BaseAdapter {
 
         if (listLanguage != null && !listLanguage.isEmpty()) {
             titleText.setText(language.getTitle());
-            titleText.setText(language.getNameShop());
+            nameShopText.setText(language.getNameShop());
             int idLanguage = language.getId();
             switch (idLanguage) {
                 case 1:
                     imageView.setImageResource(R.drawable.ca_nau_lau);
                     break;
                 case 2:
-                    imageView.setImageResource(R.drawable.do_choi_dang_mo_hinh);
-                    break;
-                case 3:
                     imageView.setImageResource(R.drawable.ga_bo_toi);
                     break;
-                case 4:
-                    imageView.setImageResource(R.drawable.hieu_long_con_tre);
-                    break;
-                case 5:
+                case 3:
                     imageView.setImageResource(R.drawable.xa_can_cau);
                     break;
-                case 6:
+                case 4:
+                    imageView.setImageResource(R.drawable.do_choi_dang_mo_hinh);
+                    break;
+                case 5:
                     imageView.setImageResource(R.drawable.lanh_dao_gian_don);
+                    break;
+                case 6:
+                    imageView.setImageResource(R.drawable.hieu_long_con_tre);
                     break;
                 case 7:
                     imageView.setImageResource(R.drawable.trump_1);

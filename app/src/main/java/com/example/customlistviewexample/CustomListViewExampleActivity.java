@@ -25,7 +25,8 @@ public class CustomListViewExampleActivity extends AppCompatActivity {
         listLanguage.add(new Language(3, "Xe cần cẩu đa năng","Shop Thế Giới đồ chơi"));
         listLanguage.add(new Language(4, "Đồ chơi dạng mô hình","Shop Thế Giới đồ chơi"));
         listLanguage.add(new Language(5, "Lãnh đạo đơn giản","Shop Minh Long Book"));
-        listLanguage.add(new Language(6, "Dolnal Trum Thiên tài lãnh dạo","Shop Minh Long Book"));
+        listLanguage.add(new Language(6, "Hiểu lòng trẻ con","Shop Minh Long Book"));
+        listLanguage.add(new Language(7, "Dolnal Trum Thiên tài lãnh dạo","Shop Minh Long Book"));
 
         LanguageAdapter adapter = new LanguageAdapter(this,R.layout.item_custom_list_view,listLanguage);
         listView.setAdapter(adapter);
