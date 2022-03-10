@@ -6,31 +6,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
-public class LanguageAdapter extends BaseAdapter {
-
+public class UsbAdapter extends BaseAdapter {
     private Context context;
     private int idLayout;
-    private List<Language> listLanguage;
+    private List<Usb> listUsb;
     private int positionSelect = -1;
 
-
-    public LanguageAdapter(Context context, int idLayout, List<Language> listLanguage) {
+    public UsbAdapter(Context context, int idLayout, List<Usb> listUsb) {
         this.context = context;
         this.idLayout = idLayout;
-        this.listLanguage = listLanguage;
+        this.listUsb = listUsb;
     }
 
     @Override
     public int getCount() {
-        if (listLanguage.size() != 0 && !listLanguage.isEmpty()) {
-            return listLanguage.size();
+        if (listUsb.size() != 0 && !listUsb.isEmpty()) {
+            return listUsb.size();
         }
         return 0;
     }
@@ -46,43 +44,36 @@ public class LanguageAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(idLayout, parent, false);
         }
-
-        TextView titleText = (TextView) convertView.findViewById(R.id.title);
-        TextView nameShopText = (TextView) convertView.findViewById(R.id.nameShop);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.logo);
         final LinearLayout linearLayout = (LinearLayout) convertView.findViewById(R.id.idLinearLayout);
-        final Language language = listLanguage.get(position);
+        final Usb usb = listUsb.get(position);
+        if (listUsb != null && !listUsb.isEmpty()) {
 
-        if (listLanguage != null && !listLanguage.isEmpty()) {
-            titleText.setText(language.getTitle());
-            nameShopText.setText(language.getNameShop());
-            int idLanguage = language.getId();
+            int idLanguage = usb.getId();
             switch (idLanguage) {
                 case 1:
-                    imageView.setImageResource(R.drawable.ca_nau_lau);
+                    imageView.setImageResource(R.drawable.giacchuyen_1);
                     break;
                 case 2:
-                    imageView.setImageResource(R.drawable.ga_bo_toi);
+                    imageView.setImageResource(R.drawable.daynguon_1);
                     break;
                 case 3:
-                    imageView.setImageResource(R.drawable.xa_can_cau);
+                    imageView.setImageResource(R.drawable.dauchuyendoipsps2_1);
                     break;
                 case 4:
-                    imageView.setImageResource(R.drawable.do_choi_dang_mo_hinh);
+                    imageView.setImageResource(R.drawable.dauchuyendoi_1);
                     break;
                 case 5:
-                    imageView.setImageResource(R.drawable.lanh_dao_gian_don);
+                    imageView.setImageResource(R.drawable.carbusbtops2_1);
                     break;
                 case 6:
-                    imageView.setImageResource(R.drawable.hieu_long_con_tre);
+                    imageView.setImageResource(R.drawable.daucam_1);
                     break;
-                case 7:
-                    imageView.setImageResource(R.drawable.trump_1);
-                    break;
+
                 default:
                     break;
             }
@@ -90,7 +81,6 @@ public class LanguageAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,language.getNameShop(), Toast.LENGTH_LONG).show();
                 positionSelect = position;
                 notifyDataSetChanged();
             }
@@ -98,12 +88,9 @@ public class LanguageAdapter extends BaseAdapter {
 
         if (positionSelect == position) {
             linearLayout.setBackgroundColor(Color.BLUE);
-            nameShopText.setTextColor(Color.RED);
         } else {
             linearLayout.setBackgroundColor(Color.WHITE);
-            nameShopText.setTextColor(Color.BLACK);
         }
         return convertView;
     }
-
 }
