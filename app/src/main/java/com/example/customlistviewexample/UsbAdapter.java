@@ -87,7 +87,8 @@ public class UsbAdapter extends BaseAdapter {
         });
 
         if (positionSelect == position) {
-            linearLayout.setBackgroundColor(Color.BLUE);
+            linearLayout.setBackgroundColor(Color.parseColor("#A5765B"));
+
         } else {
             linearLayout.setBackgroundColor(Color.WHITE);
         }
