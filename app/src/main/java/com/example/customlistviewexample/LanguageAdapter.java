@@ -97,9 +97,11 @@ public class LanguageAdapter extends BaseAdapter {
         });
 
         if (positionSelect == position) {
-            linearLayout.setBackgroundColor(Color.BLUE);
-        } else {
             linearLayout.setBackgroundColor(Color.WHITE);
+            nameShopText.setTextColor(Color.RED);
+        } else {
+            linearLayout.setBackgroundColor(Color.GRAY);
+            nameShopText.setTextColor(Color.BLACK);
         }
         return convertView;
     }

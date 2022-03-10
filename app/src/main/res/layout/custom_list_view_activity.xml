@@ -9,9 +9,9 @@
     <ListView
         android:id="@+id/idListView"
         android:layout_width="412dp"
-        android:layout_height="660dp"
+        android:layout_height="0dp"
         android:layout_marginTop="70dp"
-        android:background="@color/white"
+        android:background="#e5e5e5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
